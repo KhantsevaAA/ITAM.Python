@@ -1,4 +1,4 @@
-print("HM1C\n Введите кол-во элементов в массиве: ", end='')
+print("HM1C\n Введите элементы массива: ", end='')
 
 str=input()
 mas=str.split()
