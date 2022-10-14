@@ -3,6 +3,7 @@ n = int(input())
 och = 0
 neoch = 0
 nt = 0
+print(f"Введите {n} строки формата Элемент_1 Элемент_2 Элемент_3 Элемент_4")
 for i in range(n):
     f = 0
     str = input().split()
@@ -23,4 +24,4 @@ for i in range(n):
             neoch = neoch + 1
         else:
             nt = nt + 1
-print(f'{och} {neoch} {nt}')
+print(f'Количество очных, заочных и неизвестно каких участников через пробел: {och} {neoch} {nt}')
