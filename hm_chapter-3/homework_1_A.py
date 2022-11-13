@@ -28,24 +28,66 @@ class Binary:
     def __add__(self, other):  # сложение объекта Binary и other
         number = self.num + other.num
         output = 0
-        n = 0
+        m = -1
         while number != 0:
-            output += (number % 10) * (2 ** n)
             number = number // 2
-            n *= 10
+            m += 1
+        n = 0
+        number = self.num + other.num
+        while number != 0:
+            output += ((number % 2) * (10 ** (m - n)))
+            number = number // 2
+            n += 1
         return output
 
     def __sub__(self, other):  # вычитание other из объекта Binary
-        ...
+        number = self.num - other.num
+        output = 0
+        m = -1
+        while number != 0:
+            number = number // 2
+            m += 1
+        n = 0
+        number = self.num - other.num
+        while number != 0:
+            output += ((number % 2) * (10 ** (m - n)))
+            number = number // 2
+            n += 1
+        return output
+
 
     def __mul__(self, other):  # умножение объекта Binary на other
-        ...
+        number = self.num * other.num
+        output = 0
+        m = -1
+        while number != 0:
+            number = number // 2
+            m += 1
+        n = 0
+        number = self.num * other.num
+        while number != 0:
+            output += ((number % 2) * (10 ** (m - n)))
+            number = number // 2
+            n += 1
+        return output
 
     def __floordiv__(self, other):  # целочисленное деление объекта Binary на other
-        ...
+        number = self.num // other.num
+        output = 0
+        m = -1
+        while number != 0:
+            number = number // 2
+            m += 1
+        n = 0
+        number = self.num //other.num
+        while number != 0:
+            output += ((number % 2) * (10 ** (m - n)))
+            number = number // 2
+            n += 1
+        return output
 
     def __str__(self):  # конвертирование объекта Binary в строку
-        ...
+        return '{} {}'.format(self.num, self.other)
 
 
 x = 101
@@ -53,3 +95,6 @@ y = 10
 a = Binary(x)
 b = Binary(y)
 print(a + b)
+print(a - b)
+print(a * b)
+print(a // b)
