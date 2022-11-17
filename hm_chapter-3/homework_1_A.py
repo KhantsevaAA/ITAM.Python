@@ -74,7 +74,7 @@ class Binary:
     def __floordiv__(self, other):  # целочисленное деление объекта Binary на other
         number = self.num // other.num
         output = 0
-        m = -1
+        m = 0
         while number != 0:
             number = number // 2
             m += 1
@@ -87,11 +87,11 @@ class Binary:
         return output
 
     def __str__(self):  # конвертирование объекта Binary в строку
-        return '{} {}'.format(self.num, self.other)
+        return '{} '.format(self)
 
 
-x = 101
-y = 10
+x = int(input("Введите первое число в двоичной системем счисления: "))
+y = int(input("Введите второе число в двоичной системем счисления: "))
 a = Binary(x)
 b = Binary(y)
 print(a + b)
